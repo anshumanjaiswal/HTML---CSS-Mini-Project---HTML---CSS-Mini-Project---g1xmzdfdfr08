@@ -1,1 +1,1 @@
-This is the portfolio site developed by me.
+This is the Portfolio Website.
