@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 :root {
-  --primary-color:#10B981;
-  --off-white:#EFF6FF;
-  --dark-grey:#9CA3AF;
+  --primary-color: #10B981;
+  --off-white: #EFF6FF;
+  --dark-grey: #9CA3AF;
 }
 
-body{
-  font-family:'PT Serif', serif; 
+body {
+  font-family: 'PT Serif', serif;
   margin: 0px;
 }
+
 hr {
   margin: 2rem 0rem;
 }
 
-/** spaces **/
-
+/** Spaces **/
 .margin-md {
   margin: 2rem;
 }
 
-/** container **/
+/** Container **/
 .container {
   padding: 0rem 1rem;
 }
@@ -30,29 +30,31 @@ hr {
   margin: auto;
 }
 
-/** links **/
+/** Links **/
 .link {
   box-sizing: border-box;
   text-decoration: none;
   padding: 0.5rem 2rem;
 }
 
-.link-project{
-  margin: 2rem 0rem 0rem 34.5rem;
+.link-project {
+  margin: 2rem auto;
   background-color: var(--primary-color);
   border-radius: 0.5rem;
   color: white;
   display: block;
   max-width: 152px;
+  text-align: center;
 }
 
-.link-blog{
-margin: 2rem 0rem 0rem 14rem;
-color: var(--primary-color);
-border-radius: 0.5rem;
-border: 1px solid var(--primary-color);
-display: block;
-max-width: 154px;
+.link-blog {
+  margin: 2rem auto;
+  color: var(--primary-color);
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-color);
+  display: block;
+  max-width: 154px;
+  text-align: center;
 }
 
 .link-primary {
@@ -61,7 +63,7 @@ max-width: 154px;
   color: white;
   display: block;
   max-width: 152px;
-  margin: 2rem 1rem 1rem 0rem;
+  margin: 2rem auto;
 }
 
 .link-secondary {
@@ -70,11 +72,10 @@ max-width: 154px;
   border: 1px solid var(--primary-color);
   display: block;
   max-width: 154px;
-  margin: 1rem 1rem 1rem 0rem;
+  margin: 1rem auto;
 }
 
-/** lists **/
-
+/** Lists **/
 .list-non-bullet {
   list-style: none;
   padding-inline-start: 0px;
@@ -86,42 +87,48 @@ max-width: 154px;
   font-size: 20px;
 }
 
-/** navigation **/
-
+/** Navigation **/
 .navigation {
   background-color: var(--primary-color);
   color: white;
   padding: 1rem;
   border-bottom-left-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.navigation .nav-header{
+
+.navigation .nav-header {
   text-decoration: none;
   font-size: 2rem;
-  color:var(--off-white);
+  color: var(--off-white);
 }
 
 .navigation .nav-brand {
   font-weight: bold;
-
 }
 
 .navigation .nav-pills {
   text-align: right;
+  display: flex;
+}
+
+.navigation .nav-pills li {
+  margin-left: 15px;
 }
 
 .navigation .link {
   color: white;
 }
+
 .navigation .link-active {
   font-weight: bold;
 }
 
-/** header **/
-
+/** Header **/
 .hero {
   padding: 2rem;
   padding-top: 5rem;
-
 }
 
 .hero .logo {
@@ -129,7 +136,6 @@ max-width: 154px;
   width: 400px;
   display: block;
   margin: auto;
-
 }
 
 .hero .hero-heading {
@@ -142,23 +148,21 @@ max-width: 154px;
   color: var(--primary-color);
 }
 
-/** sections **/
-
+/** Sections **/
 .section {
   padding: 2rem;
-  text-align: center;  
+  text-align: center;
 }
 
 .section h1 {
   text-align: center;
-
 }
+
 .ow {
   background-color: var(--off-white);
 }
 
-/** footers **/
-
+/** Footers **/
 .footer {
   background-color: var(--primary-color);
   padding: 2rem 1rem;
@@ -181,17 +185,79 @@ max-width: 154px;
   padding-inline-start: 0px;
 }
 
-/** projects **/
+/** Projects **/
 .showcase-list {
   padding: 2rem;
 }
 
-.project{
-text-align: center;
-font-size:35px;
+.project {
+  text-align: center;
+  font-size: 35px;
 }
 
-/** blogs **/
+/** Blogs **/
 .showcase-blog {
   padding-bottom: 6rem;
+}
+
+/** Mobile Styles **/
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navigation .nav-pills {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-pills li {
+    margin: 10px 0;
+  }
+
+  .hero .logo {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .hero .hero-heading {
+    font-size: 28px;
+  }
+
+  .section h1 {
+    font-size: 24px;
+  }
+
+  .footer {
+    margin-top: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation .nav-header {
+    font-size: 1.5rem;
+  }
+
+  .hero .hero-heading {
+    font-size: 20px;
+  }
+
+  .hero .logo {
+    max-width: 150px;
+  }
+
+  .link-project,
+  .link-blog,
+  .link-primary,
+  .link-secondary {
+    max-width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+
+  .section h1 {
+    font-size: 18px;
+  }
 }
